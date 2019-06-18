@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <!--property name="hibernate.connection.url">jdbc:sqlserver://localhost\MSSQLSERVER:1433;databaseName=DBJADETEST</property>
+        <property name="hibernate.connection.username">sa</property-->
+        <property name="hibernate.connection.datasource">java:comp/env/jdbc/JNDI_JHMS</property>
+        <property name="show_sql">true</property>
+       
+        <!-- SQL Dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+       
+        <!-- Specifying Session Context -->
+        <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
+       
+        <!-- Mapping With Model Class Containing Annotations -->
+        <mapping class="com.jade.crud.model.CtUsuarios" />
+    </session-factory>
+</hibernate-configuration>
