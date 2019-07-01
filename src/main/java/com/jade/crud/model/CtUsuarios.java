@@ -5,37 +5,41 @@
  */
 package com.jade.crud.model;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author mperez
  */
+@Entity
 public class CtUsuarios {
     
-    private int lIdUsuario;
+    @Id
+    private int lIdusuario;
     private String Nombre;
-    private String ApPaterno;
-    private String ApMaterno;
-    private String Email;
-    private String Telefono;
-    
+    private String apellidoPaterno;
+            
     public CtUsuarios() {
     }
 
-    public CtUsuarios(int lIdUsuario, String Nombre, String ApPaterno, String ApMaterno, String Email, String Telefono) {
-        this.lIdUsuario = lIdUsuario;
+    public CtUsuarios(int lIdusuario, String Nombre, String apellidoPaterno) {
+        this.lIdusuario = lIdusuario;
         this.Nombre = Nombre;
-        this.ApPaterno = ApPaterno;
-        this.ApMaterno = ApMaterno;
-        this.Email = Email;
-        this.Telefono = Telefono;
+        this.apellidoPaterno = apellidoPaterno;
     }
     
-    public int getlIdUsuario() {
-        return lIdUsuario;
+    public int getlIdusuario() {
+        return lIdusuario;
     }
 
-    public void setlIdUsuario(int lIdUsuario) {
-        this.lIdUsuario = lIdUsuario;
+    public void setlIdusuario(int lIdusuario) {
+        this.lIdusuario = lIdusuario;
     }
 
     public String getNombre() {
@@ -45,37 +49,12 @@ public class CtUsuarios {
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
-
-    public String getApPaterno() {
-        return ApPaterno;
-    }
-
-    public void setApPaterno(String ApPaterno) {
-        this.ApPaterno = ApPaterno;
-    }
-
-    public String getApMaterno() {
-        return ApMaterno;
-    }
-
-    public void setApMaterno(String ApMaterno) {
-        this.ApMaterno = ApMaterno;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
-
-    public String getTelefono() {
-        return Telefono;
-    }
-
-    public void setTelefono(String Telefono) {
-        this.Telefono = Telefono;
-    }
     
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
+    }
+
+    public void setApellidoPaterno(String apellidoPaterno) {
+        this.apellidoPaterno = apellidoPaterno;
+    }
 }
