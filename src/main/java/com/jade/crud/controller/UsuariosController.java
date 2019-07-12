@@ -24,7 +24,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.jade.crud.model.CtUsuarios;
+import com.jade.crud.model.Usuarios;
 import com.jade.crud.repo.CtUsuariosRepository;
+import com.jade.crud.repo.UsuariosRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,12 +38,12 @@ import org.springframework.web.bind.annotation.*;
 //@CrossOrigin(origins = "http://www.appjade.com:4200", methods= {RequestMethod.GET,RequestMethod.POST})
 //se usa para escuchar peticion como si fuera un endpoint, pero en este caso se ocupa
 //spring boot
-public class CtUsuariosController {
+public class UsuariosController {
     @Autowired
-    private CtUsuariosRepository usRepository;
+    private UsuariosRepository usRepository;
 
-    @GetMapping("/getUsers")
-    public List<CtUsuarios> getAllUsers() {
+    @GetMapping("/getUsuarioss")
+    public List<Usuarios> getAllUsers() {
         return usRepository.findAll();
     }
 }
