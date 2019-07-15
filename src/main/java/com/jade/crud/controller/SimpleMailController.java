@@ -53,10 +53,22 @@ public class SimpleMailController {
     //para ejemplo rapido paso varios parametro
     //deveria ser solo con el objeto(en JSON)
     @PostMapping("/sendMail")
-    public String sendMail(@RequestParam(name = "correo") String correo,
-             @RequestParam(name = "noacount") String noacount,
-             @RequestParam(name = "clavebanc") String clavebanc,
-             @RequestParam(name = "nameuser") String nameuser) {
+    public String sendMail(
+            @RequestParam(name = "name") String name,
+            @RequestParam(name = "secondname") String secondname,
+            @RequestParam(name = "appat") String appat,
+            @RequestParam(name = "apmat") String apmat,
+            @RequestParam(name = "bancocuenta") String bancocuenta,
+            @RequestParam(name = "bancosucursal") String bancosucursal,
+            @RequestParam(name = "bancoclave") String bancoclave,
+            @RequestParam(name = "bancoreferencia") String bancoreferencia,
+            @RequestParam(name = "folio") String folio,
+            @RequestParam(name = "casa") String casa,
+            @RequestParam(name = "manzana") String manzana,
+            @RequestParam(name = "propietario") String propietario,
+            @RequestParam(name = "privada") String privada,
+            @RequestParam(name = "email") String email
+    ) {
         MimeMessage message = sender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
 
@@ -65,7 +77,7 @@ public class SimpleMailController {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
             String date = simpleDateFormat.format(new Date());
 
-            helper.setTo(correo);
+            helper.setTo(email);
             helper.setText("<h1 style=\"color: #5e9ca0;\">Residencial..</h1>\n"
                     + "<h2 style=\"color: #2e6c80;\">&nbsp;</h2>\n"
                     + "<table border=\"2\" class=\"editorDemoTable\" style=\"width: 613px;\">\n"
@@ -92,59 +104,59 @@ public class SimpleMailController {
                     + "        </tr>\n"
                     + "        <tr>\n"
                     + "            <td style=\"width: 226px;\"><strong style=\"font-size: 17px; color: #2b2301;\">Manzana:</strong></td>\n"
-                    + "            <td style=\"width: 169.1px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 169.1px;\">"+manzana+"</td>\n"
                     + "            <td style=\"width: 127.9px;\">&nbsp;</td>\n"
                     + "            <td style=\"width: 111px;\">&nbsp;</td>\n"
                     + "        </tr>\n"
                     + "        <tr>\n"
                     + "            <td style=\"width: 226px;\"><strong style=\"font-size: 17px; color: #2b2301;\">Resibi de:<br /></strong></td>\n"
-                    + "            <td style=\"width: 169.1px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 169.1px;\">"+name+" "+secondname+" "+appat+" "+apmat+"</td>\n"
                     + "            <td style=\"width: 127.9px; text-align: left;\"><strong\n"
                     + "                    style=\"font-size: 17px; color: #2b2301;\">Fecha:</strong></td>\n"
                     + "            <td style=\"width: 111px;\">"+date+"</td>\n"
                     + "        </tr>\n"
                     + "        <tr>\n"
                     + "            <td style=\"width: 226px;\"><strong style=\"font-size: 17px; color: #2b2301;\">Cantidad:</strong></td>\n"
-                    + "            <td style=\"width: 169.1px;\"><span id=\"demoId\"><strong class=\"demoClass\">&nbsp;</strong></span></td>\n"
+                    + "            <td style=\"width: 169.1px;\"><span id=\"demoId\"><strong class=\"demoClass\">$500.00</strong></span></td>\n"
                     + "            <td style=\"width: 127.9px; text-align: left;\"><strong\n"
                     + "                    style=\"font-size: 17px; color: #2b2301;\">Status:</strong></td>\n"
-                    + "            <td style=\"width: 111px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 111px;\">PAGADO</td>\n"
                     + "        </tr>\n"
                     + "        <tr>\n"
                     + "            <td style=\"width: 226px;\"><strong style=\"font-size: 17px; color: #2b2301;\">Mantenimiento:</strong></td>\n"
-                    + "            <td style=\"width: 169.1px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 169.1px;\">$500.00</td>\n"
                     + "            <td style=\"width: 127.9px; text-align: left;\"><strong\n"
                     + "                    style=\"font-size: 17px; color: #2b2301;\">Cuenta:</strong></td>\n"
-                    + "            <td style=\"width: 111px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 111px;\">"+bancocuenta+"</td>\n"
                     + "        </tr>\n"
                     + "        <tr>\n"
                     + "            <td style=\"width: 226px;\"><strong style=\"font-size: 17px; color: #2b2301;\">Pena Convencional:<br /></strong>\n"
                     + "            </td>\n"
-                    + "            <td style=\"width: 169.1px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 169.1px;\">$0.00</td>\n"
                     + "            <td style=\"width: 127.9px; text-align: left;\"><strong\n"
-                    + "                    style=\"font-size: 17px; color: #2b2301;\">Sucursa:</strong></td>\n"
-                    + "            <td style=\"width: 111px;\">&nbsp;</td>\n"
+                    + "                    style=\"font-size: 17px; color: #2b2301;\">Sucursal:</strong></td>\n"
+                    + "            <td style=\"width: 111px;\">"+bancosucursal+"</td>\n"
                     + "        </tr>\n"
                     + "        <tr>\n"
                     + "            <td style=\"width: 226px;\"><strong style=\"font-size: 17px; color: #2b2301;\">C. Extraordinaria:</strong></td>\n"
-                    + "            <td style=\"width: 169.1px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 169.1px;\">$0.00</td>\n"
                     + "            <td style=\"width: 127.9px; text-align: left;\"><strong\n"
                     + "                    style=\"font-size: 17px; color: #2b2301;\">Clabe:</strong></td>\n"
-                    + "            <td style=\"width: 111px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 111px;\">"+bancoclave+"</td>\n"
                     + "        </tr>\n"
                     + "        <tr>\n"
                     + "            <td style=\"width: 226px;\">&nbsp;</td>\n"
                     + "            <td style=\"width: 169.1px;\">&nbsp;</td>\n"
                     + "            <td style=\"width: 127.9px; text-align: left;\"><strong style=\"font-size: 17px; color: #2b2301;\">A Nombre\n"
                     + "                    de:<br /></strong></td>\n"
-                    + "            <td style=\"width: 111px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 111px;\">"+propietario+"</td>\n"
                     + "        </tr>\n"
                     + "        <tr>\n"
                     + "            <td style=\"width: 226px;\"><strong style=\"font-size: 17px; color: #2b2301;\">Total</strong></td>\n"
-                    + "            <td style=\"width: 169.1px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 169.1px;\">$500.00</td>\n"
                     + "            <td style=\"width: 127.9px; text-align: left;\"><strong\n"
                     + "                    style=\"font-size: 17px; color: #2b2301;\">Referencia:</strong></td>\n"
-                    + "            <td style=\"width: 111px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 111px;\">"+bancoreferencia+"</td>\n"
                     + "        </tr>\n"
                     + "        <tr>\n"
                     + "            <td style=\"width: 226px;\">&nbsp;</td>\n"
@@ -157,7 +169,7 @@ public class SimpleMailController {
                     + "            <td style=\"width: 169.1px;\">&nbsp;</td>\n"
                     + "            <td style=\"width: 127.9px; text-align: left;\"><strong style=\"font-size: 17px; color: #2b2301;\">Folio de\n"
                     + "                    Rastreo</strong>:</td>\n"
-                    + "            <td style=\"width: 111px;\">&nbsp;</td>\n"
+                    + "            <td style=\"width: 111px;\">"+folio+"</td>\n"
                     + "        </tr>\n"
                     + "        <tr>\n"
                     + "            <td colspan=\"4\"><strong>EL PAGO DE ESTE RECIBO NO LO EXIME DE ADEUDOS ANTERIORES</strong></td>\n"
