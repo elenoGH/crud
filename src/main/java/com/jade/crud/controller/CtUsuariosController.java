@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.jade.crud.model.CtUsuarios;
+import com.jade.crud.entity.CtUsuarios;
 import com.jade.crud.repo.CtUsuariosRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

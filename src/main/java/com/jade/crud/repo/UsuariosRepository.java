@@ -1,6 +1,6 @@
 
 package com.jade.crud.repo;
-import com.jade.crud.model.Usuarios;
+import com.jade.crud.entity.Usuarios;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

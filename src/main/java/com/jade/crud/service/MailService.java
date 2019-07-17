@@ -5,7 +5,7 @@
  */
 package com.jade.crud.service;
 
-import com.jade.crud.model.Mail;
+import com.jade.crud.entity.Mail;
 
 /**
  *

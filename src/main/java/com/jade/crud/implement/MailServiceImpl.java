@@ -5,7 +5,7 @@
  */
 package com.jade.crud.implement;
 
-import com.jade.crud.model.Mail;
+import com.jade.crud.entity.Mail;
 import com.jade.crud.service.MailService;
 
 import java.io.UnsupportedEncodingException;

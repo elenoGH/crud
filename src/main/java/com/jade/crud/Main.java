@@ -5,7 +5,7 @@
  */
 package com.jade.crud;
 
-import com.jade.crud.model.Mail;
+import com.jade.crud.entity.Mail;
 import com.jade.crud.service.MailService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

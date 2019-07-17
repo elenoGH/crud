@@ -30,8 +30,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jade.crud.model.CtUsuarios;
-import com.jade.crud.model.Usuarios;
+import com.jade.crud.entity.CtUsuarios;
+import com.jade.crud.entity.Usuarios;
 import com.jade.crud.repo.CtUsuariosRepository;
 import com.jade.crud.repo.UsuariosRepository;
 import java.io.File;

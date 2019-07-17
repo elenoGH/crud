@@ -1,5 +1,5 @@
 
-package com.jade.crud.model;
+package com.jade.crud.entity;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
