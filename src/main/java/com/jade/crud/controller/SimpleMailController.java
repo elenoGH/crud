@@ -34,10 +34,12 @@ import com.jade.crud.model.CtUsuarios;
 import com.jade.crud.model.Usuarios;
 import com.jade.crud.repo.CtUsuariosRepository;
 import com.jade.crud.repo.UsuariosRepository;
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -73,20 +75,20 @@ public class SimpleMailController {
         MimeMessageHelper helper = new MimeMessageHelper(message);
 
         try {
+            FileSystemResource res = new FileSystemResource(new File("c:/Users/mperez/Downloads/proyectoTere/logo_imisa.png"));
+
             String pattern = "yyyy-MM-dd";
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
             String date = simpleDateFormat.format(new Date());
-
+            
+            helper.setFrom("pagosimisa@imisaservicios.com");
+            //helper.addInline("imisaLogo", res);
             helper.setTo(email);
-            helper.setText("<h1 style=\"color: #5e9ca0;\">Residencial..</h1>\n"
-                    + "<h2 style=\"color: #2e6c80;\">&nbsp;</h2>\n"
-                    + "<table border=\"2\" class=\"editorDemoTable\" style=\"width: 613px;\">\n"
+            helper.setText("<table class=\"editorDemoTable\" style=\"width: 613px;\">\n"
                     + "    <thead>\n"
-                    + "        <tr>\n"
-                    + "            <td style=\"width: 226px;\">Recibo Electonico</td>\n"
-                    + "            <td style=\"width: 169.1px; text-align: center;\">Recidencial..</td>\n"
-                    + "            <td style=\"width: 127.9px;\">&nbsp;</td>\n"
-                    + "            <td style=\"width: 111px;\">&nbsp;</td>\n"
+                    + "        <tr><img src=\"../../../resources/images/logo_imisa.png\" />\n"
+                    + "            <td style=\"text-align:center\" colspan=\"4\">"
+                    + "                 <h2><strong>RESIDENCIAL VILLA TOSCANA</strong></h2></td>\n"
                     + "        </tr>\n"
                     + "    </thead>\n"
                     + "    <tbody>\n"
@@ -109,7 +111,7 @@ public class SimpleMailController {
                     + "            <td style=\"width: 111px;\">&nbsp;</td>\n"
                     + "        </tr>\n"
                     + "        <tr>\n"
-                    + "            <td style=\"width: 226px;\"><strong style=\"font-size: 17px; color: #2b2301;\">Resibi de:<br /></strong></td>\n"
+                    + "            <td style=\"width: 226px;\"><strong style=\"font-size: 17px; color: #2b2301;\">Recibi de:<br /></strong></td>\n"
                     + "            <td style=\"width: 169.1px;\">"+name+" "+secondname+" "+appat+" "+apmat+"</td>\n"
                     + "            <td style=\"width: 127.9px; text-align: left;\"><strong\n"
                     + "                    style=\"font-size: 17px; color: #2b2301;\">Fecha:</strong></td>\n"
