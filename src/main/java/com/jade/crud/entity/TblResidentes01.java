@@ -34,9 +34,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "TblResidentes01.findAll", query = "SELECT t FROM TblResidentes01 t")
     , @NamedQuery(name = "TblResidentes01.findByRid", query = "SELECT t FROM TblResidentes01 t WHERE t.rid = :rid")
     , @NamedQuery(name = "TblResidentes01.findByRcveresi", query = "SELECT t FROM TblResidentes01 t WHERE t.rcveresi = :rcveresi")
-    , @NamedQuery(name = "TblResidentes01.findByRnombre", query = "SELECT t FROM TblResidentes01 t WHERE t.rnombre = :rnombre")
-    , @NamedQuery(name = "TblResidentes01.findByRapellidop", query = "SELECT t FROM TblResidentes01 t WHERE t.rapellidop = :rapellidop")
-    , @NamedQuery(name = "TblResidentes01.findByRapellidom", query = "SELECT t FROM TblResidentes01 t WHERE t.rapellidom = :rapellidom")
+    , @NamedQuery(name = "TblResidentes01.findByRnombrecompleto", query = "SELECT t FROM TblResidentes01 t WHERE t.rnombrecompleto = :rnombrecompleto")
     , @NamedQuery(name = "TblResidentes01.findByRgenero", query = "SELECT t FROM TblResidentes01 t WHERE t.rgenero = :rgenero")
     , @NamedQuery(name = "TblResidentes01.findByRtele", query = "SELECT t FROM TblResidentes01 t WHERE t.rtele = :rtele")
     , @NamedQuery(name = "TblResidentes01.findByRemail", query = "SELECT t FROM TblResidentes01 t WHERE t.remail = :remail")})
@@ -53,14 +51,8 @@ public class TblResidentes01 implements Serializable {
     @Column(name = "rcveresi")
     private Integer rcveresi;
     @Size(max = 255)
-    @Column(name = "rnombre")
-    private String rnombre;
-    @Size(max = 255)
-    @Column(name = "rapellidop")
-    private String rapellidop;
-    @Size(max = 255)
-    @Column(name = "rapellidom")
-    private String rapellidom;
+    @Column(name = "rnombrecompleto")
+    private String rnombrecompleto;
     @Size(max = 50)
     @Column(name = "rgenero")
     private String rgenero;
@@ -103,28 +95,12 @@ public class TblResidentes01 implements Serializable {
         this.rcveresi = rcveresi;
     }
 
-    public String getRnombre() {
-        return rnombre;
+    public String getRnombrecompleto() {
+        return rnombrecompleto;
     }
 
-    public void setRnombre(String rnombre) {
-        this.rnombre = rnombre;
-    }
-
-    public String getRapellidop() {
-        return rapellidop;
-    }
-
-    public void setRapellidop(String rapellidop) {
-        this.rapellidop = rapellidop;
-    }
-
-    public String getRapellidom() {
-        return rapellidom;
-    }
-
-    public void setRapellidom(String rapellidom) {
-        this.rapellidom = rapellidom;
+    public void setRnombrecompleto(String rnombre) {
+        this.rnombrecompleto = rnombre;
     }
 
     public String getRgenero() {

@@ -43,8 +43,9 @@ public class CtReferencia01 implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
+    @Size(max = 50)
     @Column(name = "rcveref")
-    private Integer rcveref;
+    private String rcveref;
     @Size(max = 255)
     @Column(name = "rcdesc")
     private String rcdesc;
@@ -59,11 +60,11 @@ public class CtReferencia01 implements Serializable {
     public CtReferencia01() {
     }
 
-    public CtReferencia01(Integer rcveref) {
+    public CtReferencia01(String rcveref) {
         this.rcveref = rcveref;
     }
 
-    public CtReferencia01(Integer rcveref, int rid) {
+    public CtReferencia01(String rcveref, int rid) {
         this.rcveref = rcveref;
         this.rid = rid;
     }
@@ -76,11 +77,11 @@ public class CtReferencia01 implements Serializable {
         this.rid = rid;
     }
 
-    public Integer getRcveref() {
+    public String getRcveref() {
         return rcveref;
     }
 
-    public void setRcveref(Integer rcveref) {
+    public void setRcveref(String rcveref) {
         this.rcveref = rcveref;
     }
 
