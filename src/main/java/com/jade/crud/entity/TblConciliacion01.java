@@ -55,12 +55,16 @@ public class TblConciliacion01 implements Serializable {
     @Size(max = 20)
     @Column(name = "cmespa")
     private String cmespa;
+    /*
     @JoinColumn(name = "ccveestat", referencedColumnName = "epcvestat")
     @ManyToOne
     private CtEstatuspago01 ccveestat;
+    */
+    /*
     @JoinColumn(name = "ccverefe", referencedColumnName = "rcveref")
     @ManyToOne(optional = false)
     private CtReferencia01 ccverefe;
+    */
     @JoinColumn(name = "ccveviv", referencedColumnName = "vcvevivienda")
     @ManyToOne(optional = false)
     private CtViviendas01 ccveviv;
@@ -111,7 +115,7 @@ public class TblConciliacion01 implements Serializable {
     public void setCmespa(String cmespa) {
         this.cmespa = cmespa;
     }
-
+    /*
     public CtEstatuspago01 getCcveestat() {
         return ccveestat;
     }
@@ -119,7 +123,8 @@ public class TblConciliacion01 implements Serializable {
     public void setCcveestat(CtEstatuspago01 ccveestat) {
         this.ccveestat = ccveestat;
     }
-
+    */
+    /*
     public CtReferencia01 getCcverefe() {
         return ccverefe;
     }
@@ -127,7 +132,7 @@ public class TblConciliacion01 implements Serializable {
     public void setCcverefe(CtReferencia01 ccverefe) {
         this.ccverefe = ccverefe;
     }
-
+    */
     public CtViviendas01 getCcveviv() {
         return ccveviv;
     }
