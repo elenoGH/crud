@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author mperez
  */
 @Entity
-@Table(name = "Ct_EstatusPago01")
+@Table(name = "Ct_Estatuspago01")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "CtEstatusPago01.findAll", query = "SELECT c FROM CtEstatusPago01 c")
-    , @NamedQuery(name = "CtEstatusPago01.findByEpidest", query = "SELECT c FROM CtEstatusPago01 c WHERE c.epidest = :epidest")
-    , @NamedQuery(name = "CtEstatusPago01.findByEpcvestat", query = "SELECT c FROM CtEstatusPago01 c WHERE c.epcvestat = :epcvestat")
-    , @NamedQuery(name = "CtEstatusPago01.findByEpnombre", query = "SELECT c FROM CtEstatusPago01 c WHERE c.epnombre = :epnombre")
-    , @NamedQuery(name = "CtEstatusPago01.findByEpdesc", query = "SELECT c FROM CtEstatusPago01 c WHERE c.epdesc = :epdesc")})
-public class CtEstatusPago01 implements Serializable {
+    @NamedQuery(name = "CtEstatuspago01.findAll", query = "SELECT c FROM CtEstatuspago01 c")
+    , @NamedQuery(name = "CtEstatuspago01.findByEpidest", query = "SELECT c FROM CtEstatuspago01 c WHERE c.epidest = :epidest")
+    , @NamedQuery(name = "CtEstatuspago01.findByEpcvestat", query = "SELECT c FROM CtEstatuspago01 c WHERE c.epcvestat = :epcvestat")
+    , @NamedQuery(name = "CtEstatuspago01.findByEpnombre", query = "SELECT c FROM CtEstatuspago01 c WHERE c.epnombre = :epnombre")
+    , @NamedQuery(name = "CtEstatuspago01.findByEpdesc", query = "SELECT c FROM CtEstatuspago01 c WHERE c.epdesc = :epdesc")})
+public class CtEstatuspago01 implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Basic(optional = false)
@@ -51,17 +51,18 @@ public class CtEstatusPago01 implements Serializable {
     @Size(max = 255)
     @Column(name = "epdesc")
     private String epdesc;
+    /*
     @OneToMany(mappedBy = "ccveestat")
     private Collection<TblConciliacion01> tblConciliacion01Collection;
-
-    public CtEstatusPago01() {
+    */
+    public CtEstatuspago01() {
     }
 
-    public CtEstatusPago01(Integer epcvestat) {
+    public CtEstatuspago01(Integer epcvestat) {
         this.epcvestat = epcvestat;
     }
 
-    public CtEstatusPago01(Integer epcvestat, int epidest) {
+    public CtEstatuspago01(Integer epcvestat, int epidest) {
         this.epcvestat = epcvestat;
         this.epidest = epidest;
     }
@@ -97,16 +98,16 @@ public class CtEstatusPago01 implements Serializable {
     public void setEpdesc(String epdesc) {
         this.epdesc = epdesc;
     }
-
+    /*
     @XmlTransient
     public Collection<TblConciliacion01> getTblConciliacion01Collection() {
         return tblConciliacion01Collection;
     }
-
+    
     public void setTblConciliacion01Collection(Collection<TblConciliacion01> tblConciliacion01Collection) {
         this.tblConciliacion01Collection = tblConciliacion01Collection;
     }
-
+    */
     @Override
     public int hashCode() {
         int hash = 0;
@@ -117,10 +118,10 @@ public class CtEstatusPago01 implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof CtEstatusPago01)) {
+        if (!(object instanceof CtEstatuspago01)) {
             return false;
         }
-        CtEstatusPago01 other = (CtEstatusPago01) object;
+        CtEstatuspago01 other = (CtEstatuspago01) object;
         if ((this.epcvestat == null && other.epcvestat != null) || (this.epcvestat != null && !this.epcvestat.equals(other.epcvestat))) {
             return false;
         }
@@ -129,7 +130,7 @@ public class CtEstatusPago01 implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.com.AEF.entityesexternal.CtEstatusPago01[ epcvestat=" + epcvestat + " ]";
+        return "mx.com.AEF.entityesexternal.CtEstatuspago01[ epcvestat=" + epcvestat + " ]";
     }
     
 }

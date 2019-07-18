@@ -82,9 +82,10 @@ public class CtViviendas01 implements Serializable {
     @JoinColumn(name = "vcvecon", referencedColumnName = "ccvecon")
     @ManyToOne
     private CtCondominio01 vcvecon;
+    /*
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "ccveviv")
     private Collection<TblConciliacion01> tblConciliacion01Collection;
-
+    */
     public CtViviendas01() {
     }
 
@@ -187,7 +188,7 @@ public class CtViviendas01 implements Serializable {
     public void setVcvecon(CtCondominio01 vcvecon) {
         this.vcvecon = vcvecon;
     }
-
+    /*
     @XmlTransient
     public Collection<TblConciliacion01> getTblConciliacion01Collection() {
         return tblConciliacion01Collection;
@@ -196,7 +197,7 @@ public class CtViviendas01 implements Serializable {
     public void setTblConciliacion01Collection(Collection<TblConciliacion01> tblConciliacion01Collection) {
         this.tblConciliacion01Collection = tblConciliacion01Collection;
     }
-
+    */
     @Override
     public int hashCode() {
         int hash = 0;

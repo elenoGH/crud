@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.jade.crud.entity.TblUsuarios01;
-import com.jade.crud.repo.TblUsuarios01Repository;
+import com.jade.crud.repository.TblUsuarios01Repository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +38,7 @@ public class TblUsuarios01Controller {
     private TblUsuarios01Repository usRepository;
 
     @GetMapping("/getUsuarios")
-    public List<TblUsuarios01> getAllUsers() {
+    public List<TblUsuarios01> getAllUsuarios() {
         return usRepository.findAll();
     }
 }

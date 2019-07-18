@@ -5,8 +5,9 @@
  */
 package com.jade.crud.controller;
 
-import com.jade.crud.entity.TblResidentes01;
-import com.jade.crud.repository.TblResidentes01Repository;
+import com.jade.crud.entity.TblConciliacion01;
+import com.jade.crud.repository.TblConciliacion01Repository;
+
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", methods= {RequestMethod.GET,RequestMethod.POST})
-public class TblResidentes01Controller {
+public class TblConciliacion01Controller {
     @Autowired
-    private TblResidentes01Repository usRepository;
+    private TblConciliacion01Repository usRepository;
 
-    @GetMapping("/getResidentes")
-    public List<TblResidentes01> getAllResidentes() {
+    @GetMapping("/getConciliacion")
+    public List<TblConciliacion01> getAllConciliaciones() {
         return usRepository.findAll();
     }
 }

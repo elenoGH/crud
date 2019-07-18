@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -30,10 +29,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jade.crud.entity.CtUsuarios;
-import com.jade.crud.entity.Usuarios;
-import com.jade.crud.repo.CtUsuariosRepository;
-import com.jade.crud.repo.UsuariosRepository;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;

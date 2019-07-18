@@ -51,11 +51,14 @@ public class CtCondominio01 implements Serializable {
     private String cnombre;
     @Column(name = "cestatus")
     private Boolean cestatus;
+    /*
     @OneToMany(mappedBy = "vcvecon")
     private Collection<CtViviendas01> ctViviendas01Collection;
+    */
+    /*
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "rccvecond")
     private Collection<ResidentesCondominios01> residentesCondominios01Collection;
-
+    */
     public CtCondominio01() {
     }
 
@@ -99,7 +102,7 @@ public class CtCondominio01 implements Serializable {
     public void setCestatus(Boolean cestatus) {
         this.cestatus = cestatus;
     }
-
+    /*
     @XmlTransient
     public Collection<CtViviendas01> getCtViviendas01Collection() {
         return ctViviendas01Collection;
@@ -108,7 +111,8 @@ public class CtCondominio01 implements Serializable {
     public void setCtViviendas01Collection(Collection<CtViviendas01> ctViviendas01Collection) {
         this.ctViviendas01Collection = ctViviendas01Collection;
     }
-
+    */
+    /*
     @XmlTransient
     public Collection<ResidentesCondominios01> getResidentesCondominios01Collection() {
         return residentesCondominios01Collection;
@@ -117,7 +121,7 @@ public class CtCondominio01 implements Serializable {
     public void setResidentesCondominios01Collection(Collection<ResidentesCondominios01> residentesCondominios01Collection) {
         this.residentesCondominios01Collection = residentesCondominios01Collection;
     }
-
+    */
     @Override
     public int hashCode() {
         int hash = 0;
