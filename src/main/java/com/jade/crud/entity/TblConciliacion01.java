@@ -31,6 +31,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "TblConciliacion01.findAll", query = "SELECT t FROM TblConciliacion01 t")
+    , @NamedQuery(name = "TblConciliacion01.findByCcveref", query = "SELECT t FROM TblConciliacion01 t WHERE t.ccveref = :ccveref")
+    , @NamedQuery(name = "TblConciliacion01.findByCvobo", query = "SELECT t FROM TblConciliacion01 t WHERE t.cvobo = :cvobo")
+    , @NamedQuery(name = "TblConciliacion01.findByCcvestat", query = "SELECT t FROM TblConciliacion01 t WHERE t.ccvestat = :ccvestat")
+    , @NamedQuery(name = "TblConciliacion01.findByCnomresidente", query = "SELECT t FROM TblConciliacion01 t WHERE t.cnomresidente = :cnomresidente")
+    , @NamedQuery(name = "TblConciliacion01.findByCemail", query = "SELECT t FROM TblConciliacion01 t WHERE t.cemail = :cemail")
     , @NamedQuery(name = "TblConciliacion01.findByCid", query = "SELECT t FROM TblConciliacion01 t WHERE t.cid = :cid")
     , @NamedQuery(name = "TblConciliacion01.findByCmonto", query = "SELECT t FROM TblConciliacion01 t WHERE t.cmonto = :cmonto")
     , @NamedQuery(name = "TblConciliacion01.findByCfecha", query = "SELECT t FROM TblConciliacion01 t WHERE t.cfecha = :cfecha")
@@ -55,6 +60,19 @@ public class TblConciliacion01 implements Serializable {
     @Size(max = 20)
     @Column(name = "cmespa")
     private String cmespa;
+    @Size(max = 50)
+    @Column(name = "ccveref")
+    private String ccveref;
+    @Size(max = 255)
+    @Column(name = "cnomresidente")
+    private String cnomresidente;
+    @Size(max = 255)
+    @Column(name = "cemail")
+    private String cemail;
+    @Column(name = "ccvestat")
+    private Integer ccvestat;
+    @Column(name = "cvobo")
+    private Boolean cvobo;
     /*
     @JoinColumn(name = "ccveestat", referencedColumnName = "epcvestat")
     @ManyToOne
@@ -115,6 +133,48 @@ public class TblConciliacion01 implements Serializable {
     public void setCmespa(String cmespa) {
         this.cmespa = cmespa;
     }
+
+    public String getCcveref() {
+        return ccveref;
+    }
+
+    public void setCcveref(String ccveref) {
+        this.ccveref = ccveref;
+    }
+
+    public String getCnomresidente() {
+        return cnomresidente;
+    }
+
+    public void setCnomresidente(String cnomresidente) {
+        this.cnomresidente = cnomresidente;
+    }
+
+    public String getCemail() {
+        return cemail;
+    }
+
+    public void setCemail(String cemail) {
+        this.cemail = cemail;
+    }
+
+    public Integer getCcvestat() {
+        return ccvestat;
+    }
+
+    public void setCcvestat(Integer ccvestat) {
+        this.ccvestat = ccvestat;
+    }
+
+    public Boolean getCvobo() {
+        return cvobo;
+    }
+
+    public void setCvobo(Boolean cvobo) {
+        this.cvobo = cvobo;
+    }
+    
+    
     /*
     public CtEstatuspago01 getCcveestat() {
         return ccveestat;
