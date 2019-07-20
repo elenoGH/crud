@@ -5,6 +5,7 @@
  */
 package com.jade.crud;
 
+import com.jade.crud.servces.StorageService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import javax.annotation.Resource;
 
 @SpringBootApplication
 @PropertySource("classpath:application.properties")
@@ -23,14 +25,23 @@ import org.springframework.context.ApplicationContext;
 })
 public class Main extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-            SpringApplication.run(Main.class, args);
-	}
-	@Override
+    @Resource
+    StorageService storageService;
+    
+    public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
+    }
 
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+    @Override
 
-		return application.sources(Main.class);
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 
-	}
+        return application.sources(Main.class);
+
+    }
+
+    public void run(String... arg) throws Exception {
+        storageService.deleteAll();
+        storageService.init();
+    }
 }
