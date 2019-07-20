@@ -39,7 +39,7 @@ public class LoadFileController {
         Map<String, JobParameter> maps = new HashMap<>();
         //en seguida se deve colocar un parametro en JobParameter, 
         //este es variable para que podamos subir la informacion de un csv
-        maps.put("ccveref", new JobParameter("11"));
+        maps.put("ccveref", new JobParameter("11-JobChange"));
         JobParameters parameters = new JobParameters(maps);
         JobExecution jobExecution = jobLauncher.run(job, parameters);
 

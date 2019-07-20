@@ -54,7 +54,7 @@ public class SpringBatchConfiguration {
     }
     
     @Bean
-    public FlatFileItemReader<TblConciliacion01> itemReader(@Value("${input}") Resource resource) {
+    public FlatFileItemReader<TblConciliacion01> itemReader(@Value("${inputFile}") Resource resource) {
         FlatFileItemReader<TblConciliacion01> flatFileItemReader = new FlatFileItemReader<>();
         flatFileItemReader.setResource(resource);
         flatFileItemReader.setName("CSV-Reader");

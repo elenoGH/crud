@@ -81,7 +81,7 @@ public class SimpleMailController {
             helper.setTo(email);
             helper.setText("<table class=\"editorDemoTable\" style=\"width: 613px;\">\n"
                     + "    <thead>\n"
-                    + "        <tr><img src=\"../../../resources/images/logo_imisa.png\" />\n"
+                    + "        <tr><img src=\"http://localhost/crud/imagenes/logo_imisa.png\" />\n"
                     + "            <td style=\"text-align:center\" colspan=\"4\">"
                     + "                 <h2><strong>RESIDENCIAL VILLA TOSCANA</strong></h2></td>\n"
                     + "        </tr>\n"

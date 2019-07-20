@@ -25,13 +25,13 @@ public class Processor implements ItemProcessor<TblConciliacion01, TblConciliaci
 
     @Override
     public TblConciliacion01 process(TblConciliacion01 tblConciliacion01) throws Exception {
-        String mail = tblConciliacion01.getCemail();
-        String dept = DEPT_NAMES.get(mail);
+        //String mail = tblConciliacion01.getCemail();
+        //String dept = DEPT_NAMES.get(mail);
         //si quiero cambiar un valor constante por una referencia
         //la puedo cambiar aqui
         //tblConciliacion01.setCnomresidente(dept);
         tblConciliacion01.setCfecha(new Date());
-        System.out.println(String.format("Converted from [%s] to [%s]", mail, dept));
+        //System.out.println(String.format("Converted from [%s] to [%s]", mail, dept));
         return tblConciliacion01;
     }
 }
