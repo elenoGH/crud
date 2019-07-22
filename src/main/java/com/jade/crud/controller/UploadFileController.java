@@ -77,12 +77,23 @@ public class UploadFileController {
             storageService.store(file);
             files.add(file.getOriginalFilename());
 
-            message = "You successfully uploaded " + file.getOriginalFilename() + "!";
+            message = "Tu archivo se subio correctamente: " + file.getOriginalFilename() + "!";
             return ResponseEntity.status(HttpStatus.OK).body(message);
         } catch (Exception e) {
             message = "FAIL to upload " + file.getOriginalFilename() + "!";
             return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
         }
+    }
+    @RequestMapping("/deleteFiles")
+    public String deleteFiles() {
+        try {
+            storageService.deleteAll();
+            storageService.init();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Error al borrar archivos "+e;
+        }
+        return "Se eliminaron los archivos Correctamente";
     }
 
     @GetMapping("/getallfiles")

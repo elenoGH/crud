@@ -15,12 +15,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/loadFile")
+@RequestMapping
 public class LoadFileController {
 
     @Autowired
@@ -29,8 +30,8 @@ public class LoadFileController {
     @Autowired
     Job job;
 
-    @GetMapping
-    public BatchStatus load() throws JobParametersInvalidException
+    @GetMapping("/loadFile")
+    public BatchStatus load(@RequestParam(name = "jobParameter") String jobParameter) throws JobParametersInvalidException
             , JobExecutionAlreadyRunningException
             , JobRestartException
             , JobInstanceAlreadyCompleteException {
@@ -39,7 +40,10 @@ public class LoadFileController {
         Map<String, JobParameter> maps = new HashMap<>();
         //en seguida se deve colocar un parametro en JobParameter, 
         //este es variable para que podamos subir la informacion de un csv
-        maps.put("ccveref", new JobParameter("11-JobChange"));
+        //jobParameter este parametro deve ser variable en la vida del sistema, guardarlo como un id 
+        //en la BD para que sea variable, asociarlo con un ID de la tabla por ejemplo para que sea unico e
+        //inigualable
+        maps.put("ccveref", new JobParameter(jobParameter));
         JobParameters parameters = new JobParameters(maps);
         JobExecution jobExecution = jobLauncher.run(job, parameters);
 

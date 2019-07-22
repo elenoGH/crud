@@ -17,29 +17,28 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import javax.annotation.Resource;
+import org.springframework.boot.CommandLineRunner;
 
 @SpringBootApplication
 @PropertySource("classpath:application.properties")
 @ComponentScan(basePackages = {
     "com.jade.crud"
 })
-public class Main extends SpringBootServletInitializer {
+public class Main extends SpringBootServletInitializer implements CommandLineRunner{
 
     @Resource
     StorageService storageService;
-    
+
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
 
     @Override
-
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-
         return application.sources(Main.class);
-
     }
 
+    @Override
     public void run(String... arg) throws Exception {
         storageService.deleteAll();
         storageService.init();
