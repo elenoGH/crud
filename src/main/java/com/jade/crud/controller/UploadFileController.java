@@ -84,7 +84,7 @@ public class UploadFileController {
             return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
         }
     }
-    @RequestMapping("/deleteFiles")
+    @PostMapping("/deleteFiles")
     public String deleteFiles() {
         try {
             storageService.deleteAll();
