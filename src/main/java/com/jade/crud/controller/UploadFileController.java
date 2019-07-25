@@ -70,8 +70,8 @@ public class UploadFileController {
 
     List<String> files = new ArrayList<String>();
 
-    @PostMapping("/postFileUpload")
-    public ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file) {
+    @PostMapping("/subirArchivoServidorController")
+    public ResponseEntity<String> handleFileUpload(@RequestParam("archivo_") MultipartFile file) {
         String message = "";
         try {
             storageService.store(file);
