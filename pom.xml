@@ -60,6 +60,19 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!--agregando dependencias alternas-->
+        <!--dependency>
+            <groupId>mx.com.sgi.jade</groupId>
+            <artifactId>portal-sgi-jade-entity</artifactId>
+            <version>1.0.0</version>
+            <type>jar</type>
+        </dependency-->
+        <dependency>
+            <groupId>com.jade.crud</groupId>
+            <artifactId>crud-entity</artifactId>
+            <version>002</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
